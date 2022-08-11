@@ -54,7 +54,7 @@
                     <x-slot name="content">
                         <!-- Authentication -->
                         <x-dropdown-link :href="route('admin.account.info')" :active="request()->routeIs('admin.account.info')">
-                                {{ __('My Account') }}
+                                {{ __('我的账户') }}
                         </x-dropdown-link>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -62,7 +62,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('退出') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -85,17 +85,26 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('总览') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')">
-                {{ __('Permissions') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')">
-                {{ __('Roles') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
-                {{ __('Users') }}
-            </x-responsive-nav-link>
+            @can('user create')
+                <x-responsive-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')">
+                    {{ __('权限管理') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')">
+                    {{ __('角色管理') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                    {{ __('用户管理') }}
+                </x-responsive-nav-link>
+            @elsecan('task create')
+                <x-responsive-nav-link :href="route('task.index')" :active="request()->routeIs('task.index')">
+                    {{ __('任务列表') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('task_log.index')" :active="request()->routeIs('task_log.index')">
+                    {{ __('日志登记') }}
+                </x-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->
@@ -107,7 +116,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('admin.account.info')" :active="request()->routeIs('admin.account.info')">
-                        {{ __('My Account') }}
+                        {{ __('我的账户') }}
                 </x-responsive-nav-link>
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
@@ -116,7 +125,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('退出') }}
                     </x-responsive-nav-link>
                 </form>
             </div>
