@@ -63,21 +63,23 @@ class BasicAdminPermissionSeeder extends Seeder
         // gets all permissions via Gate::before rule; see AuthServiceProvider
         // create demo users
         $user = \App\Models\User::factory()->create([
-            'name' => 'Super Admin',
+            'name' => '管理员',
             'phone' => '13487564267',
             'sex' => '1',
             'schools_id' => '1',
             'is_member' => '0',
+            'order' => '0',
             'is_formal' => '0',
             'is_working' => '0',
         ]);
         $user->assignRole($role3);
         $user = \App\Models\User::factory()->create([
-            'name' => 'Operator User',
+            'name' => '操作员',
             'phone' => '13755164667',
             'sex' => '1',
             'schools_id' => '1',
             'is_member' => '0',
+            'order' => '0',
             'is_formal' => '0',
             'is_working' => '0',
         ]);

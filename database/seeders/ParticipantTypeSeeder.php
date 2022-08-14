@@ -15,9 +15,9 @@ class ParticipantTypeSeeder extends Seeder
      */
     public function run()
     {
-        ParticipantType::factory()->create(['name' => "全体教师", 'condition' => 'is_working:1']);
-        ParticipantType::factory()->create(['name' => "党员教师", 'condition' => 'is_working:1,is_member:1']);
-        ParticipantType::factory()->create(['name' => "在职教师", 'condition' => 'is_working:1,is_formal:1']);
-        ParticipantType::factory()->create(['name' => "临聘教师", 'condition' => 'is_working:1,is_formal:0']);
+        ParticipantType::factory()->create(['name' => "全体", 'condition' => 'is_working:1']);
+        ParticipantType::factory()->create(['name' => "党员", 'condition' => 'is_working:1,is_member:1']);
+        ParticipantType::factory()->create(['name' => "在职", 'condition' => 'is_working:1,is_formal:1']);
+        ParticipantType::factory()->create(['name' => "临聘", 'condition' => 'is_working:1,is_formal:0']);
     }
 }

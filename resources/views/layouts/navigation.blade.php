@@ -12,9 +12,6 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('总览') }}
-                    </x-nav-link>
                     @can('user create')
                         <x-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')">
                             {{ __('权限管理') }}
@@ -26,13 +23,16 @@
                             {{ __('用户管理') }}
                         </x-nav-link>
                     @elsecan('task create')
-                        <x-nav-link :href="route('task.index')" :active="request()->routeIs('task.index')">
-                            {{ __('任务列表') }}
-                        </x-nav-link>
                         <x-nav-link :href="route('task_log.index')" :active="request()->routeIs('task_log.index')">
-                            {{ __('日志登记') }}
+                            {{ __('任务记录') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('task.index')" :active="request()->routeIs('task.index')">
+                            {{ __('任务管理') }}
                         </x-nav-link>
                     @endcan
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('数据汇总') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -84,9 +84,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('总览') }}
-            </x-responsive-nav-link>
+            
             @can('user create')
                 <x-responsive-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')">
                     {{ __('权限管理') }}
@@ -98,13 +96,16 @@
                     {{ __('用户管理') }}
                 </x-responsive-nav-link>
             @elsecan('task create')
-                <x-responsive-nav-link :href="route('task.index')" :active="request()->routeIs('task.index')">
-                    {{ __('任务列表') }}
-                </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('task_log.index')" :active="request()->routeIs('task_log.index')">
-                    {{ __('日志登记') }}
+                    {{ __('任务记录') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('task.index')" :active="request()->routeIs('task.index')">
+                    {{ __('任务管理') }}
                 </x-responsive-nav-link>
             @endcan
+                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    {{ __('数据汇总') }}
+                </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

@@ -16,8 +16,8 @@ class TaskSeeder extends Seeder
      */
     public function run()
     {
-        Task::factory()->create(['name' => "2022年秋季开学工作会议", 'task_types_id' => '1', 'participant_types_id' => '1', 'happen_at' => '2022-08-18']);
-        Task::factory()->create(['name' => "党员工作务虚会", 'task_types_id' => '1', 'participant_types_id' => '2', 'happen_at' => '2022-08-18']);
-        Task::factory()->create(['name' => "开学教案提交", 'task_types_id' => '2', 'participant_types_id' => '3', 'happen_at' => '2022-08-18']);
+        Task::factory()->create(['name' => "2022年秋季开学工作会议", 'task_types_id' => '1', 'participant_types_id' => '1', 'happen_at' => '2022-08-18 12:30']);
+        Task::factory()->create(['name' => "党员工作务虚会", 'task_types_id' => '1', 'participant_types_id' => '2', 'happen_at' => '2022-08-18 16:30']);
+        Task::factory()->create(['name' => "开学教案提交", 'task_types_id' => '2', 'participant_types_id' => '3', 'happen_at' => '2022-08-18 9:30']);
     }
 }

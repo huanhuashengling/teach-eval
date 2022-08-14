@@ -29,7 +29,7 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->date('happen_at');
+            $table->dateTime('happen_at');
             $table->string('participant_types_id');
             $table->string('task_types_id');
             $table->timestamps();

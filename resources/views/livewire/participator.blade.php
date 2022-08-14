@@ -1,7 +1,7 @@
 <div>
     @if(isset($userData))
-    <label for="participator_user_list" class="{{$errors->has('participator_user_list') ? 'text-red-400' : ''}}">{{ __('选择完成任务的名单') }}</label>
-        <div class="grid sm:grid-cols-4 gap-4 md:grid-cols-6 lg:grid-cols-8">
+    <label for="participator_user_list" class="{{$errors->has('participator_user_list') ? 'text-red-400' : ''}} block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400" >{{ __('选择完成任务的名单') }}</label>
+        <div class="grid grid-cols-3 sm:grid-cols-3 gap-1 md:grid-cols-8 lg:grid-cols-10">
         @foreach ($userData as $user)
             <livewire:person :user="$user" :key="time().$user->id" :tasksId="$tasksId" />
         @endforeach

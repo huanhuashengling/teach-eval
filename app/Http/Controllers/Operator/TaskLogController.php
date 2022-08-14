@@ -43,12 +43,10 @@ class TaskLogController extends Controller
         } else {
             $tasks->latest();
         }
+
         $tasks = $tasks->paginate(10)->onEachSide(2);
 
-        $selectorName = "tasks_id";
-        $users = (new User)->newQuery();
-        $userData = $users->where('is_working', '=', '1')->get();
-        return view('operator.task_log.index', compact('tasks', 'userData', 'selectorName'))
+        return view('operator.task_log.index', compact('tasks'))
                 ->with('i', (request()->input('page', 1) - 1) * 10);
 
 

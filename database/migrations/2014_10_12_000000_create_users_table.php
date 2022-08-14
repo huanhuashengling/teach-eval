@@ -20,6 +20,8 @@ return new class extends Migration
             $table->timestamp('phone_verified_at')->nullable();
             $table->string('password');
             $table->string('schools_id');
+            $table->date('birth_date')->nullable();
+            $table->string('order')->nullable();
             $table->string('sex');
             $table->string('is_member');
             $table->string('is_formal');
