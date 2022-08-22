@@ -30,7 +30,7 @@
                             {{ __('任务管理') }}
                         </x-nav-link>
                     @endcan
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('report.index', ['ptid' => 1])" :active="request()->routeIs('report.index')">
                         {{ __('数据汇总') }}
                     </x-nav-link>
                 </div>
@@ -103,7 +103,7 @@
                     {{ __('任务管理') }}
                 </x-responsive-nav-link>
             @endcan
-                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                <x-responsive-nav-link :href="route('report.index')" :active="request()->routeIs('report.index')">
                     {{ __('数据汇总') }}
                 </x-responsive-nav-link>
         </div>

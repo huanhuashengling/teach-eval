@@ -48,4 +48,12 @@ class User extends Authenticatable
     protected $casts = [
         'phone_verified_at' => 'datetime',
     ];
+
+    public function taskLogs() {
+        return $this->hasMany(TaskLog::class, "users_id");
+    }
+
+    public function available_task_logs() {
+        return $this->taskLogs()->where('eval','=', 1);
+    }
 }

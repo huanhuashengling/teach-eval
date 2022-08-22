@@ -31,4 +31,6 @@ Route::group([
 ], function () {
     Route::resource('task', 'TaskController');
     Route::resource('task_log', 'TaskLogController');
+    Route::resource('report', 'ReportController');
+    Route::get('report-export', 'ReportController@export')->name('operator.report.export');
 });
