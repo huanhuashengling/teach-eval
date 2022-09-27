@@ -3,8 +3,15 @@
             {{ __('Users') }}
     </x-slot>
 
+    <x-slot name="breadcrumb">
+        {{ __('Update user') }}
+    </x-slot>
+
+    <x-slot name="href">
+        {{ __(route('user.index')) }}
+    </x-slot>
+
     <div>
-        <x-admin.breadcrumb href="{{route('user.index')}}" title="{{ __('Update user') }}">{{ __('<< Back to all users') }}</x-admin.breadcrumb>
         <x-admin.form.errors />
     </div>
     <div class="w-full py-2 bg-white overflow-hidden">
@@ -12,6 +19,7 @@
         <form method="POST" action="{{ route('user.update', $user->id) }}">
         @csrf
         @method('PUT')
+            <h3 class="inline-block text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200 py-4 block sm:inline-block flex">Info</h3>
 
             <div class="py-2">
                 <x-admin.form.label for="name" class="{{$errors->has('name') ? 'text-red-400' : ''}}">{{ __('Name') }}</x-admin.form.label>

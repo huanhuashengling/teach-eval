@@ -2,11 +2,18 @@
     <x-slot name="title">
             {{ __('Users') }}
     </x-slot>
+    
+    <x-slot name="breadcrumb">
+        {{ __('View user') }}
+    </x-slot>
 
-    <div class="d-print-none with-border">
-        <x-admin.breadcrumb href="{{route('user.index')}}" title="{{ __('View user') }}">{{ __('<< Back to all users') }}</x-admin.breadcrumb> 
-    </div>
+    <x-slot name="href">
+        {{ __(route('user.index')) }}
+    </x-slot>
+
     <div class="w-full py-2">
+        <h3 class="inline-block text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200 py-4 block sm:inline-block flex">User Data</h3>
+
         <div class="min-w-full border-b border-gray-200 shadow">
             <table class="table-fixed w-full text-sm">
                 <tbody class="bg-white dark:bg-slate-800">

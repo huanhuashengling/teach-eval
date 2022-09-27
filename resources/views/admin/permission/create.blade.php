@@ -2,9 +2,15 @@
     <x-slot name="title">
             {{ __('Permissions') }}
     </x-slot>
+    <x-slot name="breadcrumb">
+        {{ __('Create permission') }}
+    </x-slot>
+
+    <x-slot name="href">
+        {{ __(route('permission.index')) }}
+    </x-slot>
 
     <div>
-        <x-admin.breadcrumb href="{{route('permission.index')}}" title="{{ __('Create permission') }}">{{ __('<< Back to all permissions') }}</x-admin.breadcrumb>
         <x-admin.form.errors />
     </div>
     <div class="w-full py-2 bg-white overflow-hidden">

@@ -3,6 +3,14 @@
         {{ __('Permissions') }}
     </x-slot>
 
+    <x-slot name="breadcrumb">
+        {{ __('') }}
+    </x-slot>
+
+    <x-slot name="href">
+        {{ __(route('permission.index')) }}
+    </x-slot>
+
     @can('permission create')
     <x-admin.add-link href="{{ route('permission.create') }}">
         {{ __('Add Permission') }}

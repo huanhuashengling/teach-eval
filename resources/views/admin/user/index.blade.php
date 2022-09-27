@@ -3,6 +3,14 @@
         {{ __('Users') }}
     </x-slot>
 
+    <x-slot name="breadcrumb">
+        {{ __('') }}
+    </x-slot>
+
+    <x-slot name="href">
+        {{ __(route('user.index')) }}
+    </x-slot>
+
     @can('user create')
     <x-admin.add-link href="{{ route('user.create') }}">
         {{ __('Add User') }}

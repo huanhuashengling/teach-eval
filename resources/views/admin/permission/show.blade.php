@@ -3,9 +3,14 @@
             {{ __('Permissions') }}
     </x-slot>
 
-    <div class="d-print-none with-border">
-        <x-admin.breadcrumb href="{{route('permission.index')}}" title="{{ __('View permission') }}">{{ __('<< Back to all permissions') }}</x-admin.breadcrumb> 
-    </div>
+    <x-slot name="breadcrumb">
+        {{ __('View permission') }}
+    </x-slot>
+
+    <x-slot name="href">
+        {{ __(route('permission.index')) }}
+    </x-slot>
+
     <div class="w-full py-2">
         <div class="min-w-full border-b border-gray-200 shadow">
             <table class="table-fixed w-full text-sm">

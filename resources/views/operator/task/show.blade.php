@@ -3,9 +3,14 @@
             {{ __('任务列表') }}
     </x-slot>
 
-    <div class="d-print-none with-border">
-        <x-admin.breadcrumb href="{{route('task.index')}}" title="{{ __('查看任务内容') }}">{{ __('<< 回到任务列表') }}</x-admin.breadcrumb> 
-    </div>
+    <x-slot name="breadcrumb">
+        {{ __('任务内容') }}
+    </x-slot>
+
+    <x-slot name="href">
+        {{ __(route('task.index')) }}
+    </x-slot>
+
     <div class="w-full py-2">
         <div class="min-w-full border-b border-gray-200 shadow">
             <table class="table-fixed w-full text-sm">
