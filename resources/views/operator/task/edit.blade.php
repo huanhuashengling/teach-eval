@@ -33,7 +33,7 @@
             <div class="py-2">
                 <label for="participant_types_id" class="{{$errors->has('participant_types_id') ? 'text-red-400' : ''}} block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">{{ __('请选择人员类型') }}</label>
                 <select id="participant_types_id" name="participant_types_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ $task->participant_types_id }}">
-                    <option selected>请选择人员类型</option>
+                    <option value="" selected>请选择人员类型</option>
                     @foreach ($participantTypes as $participantType)
                         <option value="{{$participantType->id}}" {{( $participantType->id == $task->participant_types_id)?"selected":"" }}>{{ $participantType->name }}</option>
                     @endforeach
@@ -43,7 +43,7 @@
             <div class="py-2">
                 <label for="task_types_id" class="{{$errors->has('task_types_id') ? 'text-red-400' : ''}} block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">{{ __('选择任务类型') }}</label>
                 <select id="task_types_id" name="task_types_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option selected>选择任务类型</option>
+                    <option value="" selected>选择任务类型</option>
                     @foreach ($taskTypes as $taskType)
                         <option value="{{$taskType->id}}" {{( $taskType->id == $task->task_types_id)?"selected":"" }}>{{ $taskType->name }}</option>
                     @endforeach
