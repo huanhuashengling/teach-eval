@@ -30,7 +30,7 @@ class ReportController extends Controller
     {
         $participantTypesId = isset($request->participantTypesId)?$request->participantTypesId:1;
         $startDate = isset($request->startDate)?$request->startDate:"";
-        $endDate = isset($request->endDate)?$request->endDate:"";;
+        $endDate = isset($request->endDate)?$request->endDate:"";
         echo "participantTypesId " . $participantTypesId . " startDate  " . $startDate . " endDate " . $endDate;
         $tasks = $this->getTasksData($participantTypesId, $startDate, $endDate);
 
